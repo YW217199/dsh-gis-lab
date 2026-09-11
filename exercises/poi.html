@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数组方法练习 · POI 数据分析</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --ok: #34d399;
+      --fail: #f87171;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 20px 60px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 860px; margin: 0 auto; }
+    h1 { margin: 0 0 6px; font-size: 24px; }
+    .lead { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+    .lead code {
+      background: var(--card);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    #summary {
+      display: inline-block;
+      margin: 18px 0 6px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    #summary.doing { background: rgba(251,191,36,.15); color: #fbbf24; }
+    #summary.done  { background: rgba(52,211,153,.15); color: var(--ok); }
+    #results { margin-top: 10px; }
+    .q {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left-width: 4px;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .q.pass { border-left-color: var(--ok); }
+    .q.fail { border-left-color: var(--fail); }
+    .q-head { font-weight: 600; font-size: 15px; }
+    .q-detail {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      word-break: break-all;
+      font-family: Consolas, "Courier New", monospace;
+    }
+    .q-detail.err { color: var(--fail); }
+    .q-detail.exp { color: var(--ok); }
+    .q-hint {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #fbbf24;
+      background: rgba(251,191,36,.08);
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+    .tip {
+      margin-top: 24px;
+      padding: 14px 16px;
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .tip strong { color: var(--text); }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>数组方法练习 · POI 数据分析</h1>
+    <p class="lead">
+      打开 <code>exercises/poi.js</code>，把 8 个函数里的 <code>return null;</code> 换成你的实现，
+      保存后刷新本页即可看到判定结果。
+    </p>
+    <p class="lead">
+      数据集在 <code>exercises/poi-data.js</code>，共 20 条武汉 POI 记录。
+    </p>
+
+    <div id="summary">加载中…</div>
+    <div id="results"></div>
+
+    <div class="tip">
+      <strong>做题要求</strong><br />
+      1. 只能改 <code>poi.js</code> 中 8 个函数的函数体，不要改函数名、不要动 <code>poi-data.js</code><br />
+      2. 用到的工具：<code>filter</code> / <code>map</code> / <code>sort</code> / <code>reduce</code> / <code>includes</code><br />
+      3. 全绿之后，执行一次提交：
+      <code>git add . &amp;&amp; git commit -m "feat: 完成数组方法练习" &amp;&amp; git push</code>
+    </div>
+  </div>
+
+  <script src="./poi-data.js"></script>
+  <script src="./poi.js"></script>
+</body>
+</html>

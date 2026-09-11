@@ -4,6 +4,8 @@
 
 **在线预览**：https://yw217199.github.io/dsh-gis-lab/
 
+**数组方法练习**：https://yw217199.github.io/dsh-gis-lab/exercises/poi.html
+
 ## 当前进度
 
 - [x] 第 1 周：环境搭建 + 前端骨架
