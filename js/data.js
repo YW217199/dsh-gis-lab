@@ -8,7 +8,7 @@ const ENV_ITEMS = [
   { name: "npm", value: "11.19.0", ok: true },
   { name: "Python", value: "3.13.5", ok: true },
   { name: "conda", value: "25.5.1", ok: true },
-  { name: "Git", value: "今天安装", ok: false },
+  { name: "Git", value: "2.55.0", ok: true },
 ];
 
 const PHASES = [
