@@ -1,0 +1,293 @@
+/* ==========================================================================
+   研一 WebGIS 学习看板 · 样式
+   第 1 周重点：Grid 布局 + 媒体查询（窄屏卡片自动堆叠）
+   ========================================================================== */
+
+:root {
+  --bg: #0f172a;
+  --bg-soft: #1e293b;
+  --bg-card: #1e293b;
+  --border: #334155;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --ok: #34d399;
+  --doing: #fbbf24;
+  --todo: #64748b;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 20px 60px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- 页头 ---------- */
+
+.site-header {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 0 8px;
+}
+
+.site-header h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.block {
+  margin-top: 36px;
+}
+
+.block h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 10px;
+  border-left: 3px solid var(--accent);
+}
+
+/* ---------- 卡片网格（本周核心练习点） ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 桌面：3 列 */
+  gap: 14px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.card .card-meta {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.card.is-ok {
+  border-color: rgba(52, 211, 153, 0.45);
+}
+
+.card.is-todo {
+  border-color: var(--border);
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ---------- 工具条 ---------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.toolbar input[type="search"],
+.toolbar select {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+}
+
+.toolbar input[type="search"] {
+  flex: 1 1 240px;
+  min-width: 200px;
+}
+
+.toolbar input[type="search"]:focus,
+.toolbar select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.result-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ---------- 表格 ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.roadmap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.roadmap-table th,
+.roadmap-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.roadmap-table thead th {
+  background: #172033;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.roadmap-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.roadmap-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.week-cell {
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ---------- 状态标签 ---------- */
+
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.badge.done {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--ok);
+}
+
+.badge.doing {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--doing);
+}
+
+.badge.todo {
+  background: rgba(100, 116, 139, 0.2);
+  color: var(--todo);
+}
+
+.empty-row td {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 24px;
+}
+
+/* ---------- 地图占位 ---------- */
+
+.map-placeholder {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--bg-soft);
+}
+
+.map-placeholder p {
+  margin: 4px 0;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ---------- 页脚 ---------- */
+
+.site-footer {
+  max-width: 1080px;
+  margin: 48px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+code {
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   媒体查询：窄屏卡片自动堆叠（第 1 周练习点）
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 14px 40px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header h1 {
+    font-size: 22px;
+  }
+
+  .result-count {
+    margin-left: 0;
+  }
+}
